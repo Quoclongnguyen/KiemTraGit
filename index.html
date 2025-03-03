@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function checkLogin() {
+            let username = document.getElementById("txtUserName").value;
+            let password = document.getElementById("txtmatkhau").value;
+
+            if (username === "admin" && password === "admin") {
+                window.location.href = "success.html"; // Chuyển trang khi đăng nhập thành công
+            } else {
+                alert("Sai tên đăng nhập hoặc mật khẩu!"); // Hiển thị cảnh báo nếu sai
+            }
+        }
+    </script>
 </head>
 <body>
-    <!-- Add a header and a paragraph -->
     <header>
         <h1>Welcome to my page</h1>
     </header>
     <p>This is a sample paragraph.</p>
-    <label for="">ten dang nhap</label>
+
+    <label for="txtUserName">Tên đăng nhập</label>
     <input type="text" id="txtUserName">
-    <label for="">mat khau</label>
-    <input type="text" id="txtmatkhau">
-    <button>dang nhap</button>
-</body>
-</html>
+
+    <label for="txtmatkhau">Mật khẩu</label>
+    <input type="password" id="txtmatkhau"> <!-- Đổi input thành password -->
+
+    <button onclick="checkLogin()">Đăng nhập</button>
 </body>
 </html>
